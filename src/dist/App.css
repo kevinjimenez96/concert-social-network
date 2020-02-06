@@ -1,0 +1,32 @@
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+  .navbar__logo {
+    width: 7rem;
+    grid-column-start: 3;
+    grid-column-end: 4; }
+  .navbar__menu {
+    grid-column-start: 5;
+    justify-self: center;
+    align-self: center; }
+  .navbar__links {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+  .navbar__link {
+    display: inline;
+    margin: 1rem; }
+    .navbar__link:hover {
+      color: #f56b6a; }
+
+@media (min-width: 599px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10rem; }
+    .navbar__links {
+      display: inline; }
+    .navbar__menu {
+      display: none; } }
