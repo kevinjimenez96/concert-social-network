@@ -1,21 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel } from "antd";
-import ReactDOM from "react-dom";
+import "antd/dist/antd.css";
+import { EventsService } from "../../database/database";
 
-ReactDOM.render(
-  <Carousel autoplay>
-    <div>
-      <h3>1</h3>
-    </div>
-    <div>
-      <h3>2</h3>
-    </div>
-    <div>
-      <h3>3</h3>
-    </div>
-    <div>
-      <h3>4</h3>
-    </div>
-  </Carousel>,
-  document.getElementById("carousel-container")
-);
+export const HomeCarousel = () => {
+  const [nextEvents] = useState(EventsService.findNext());
+  return (
+    <Carousel className='carousel'>
+      {nextEvents.map(event => (
+        <img
+          key={event.name}
+          className='carousel__img'
+          src={event.image}
+          alt={`The event ${event.name}`}
+        ></img>
+      ))}
+    </Carousel>
+  );
+};

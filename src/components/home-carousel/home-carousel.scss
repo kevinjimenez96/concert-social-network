@@ -1,0 +1,27 @@
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 30%;
+  line-height: 160px;
+  background: $primary-color;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.carousel {
+  &__img {
+    width: 100%;
+    height: 40vh;
+  }
+}
+
+@media (min-width: $breakpoint-phone) {
+  .carousel {
+    &__img {
+      width: 100%;
+      height: 55vh;
+    }
+  }
+}

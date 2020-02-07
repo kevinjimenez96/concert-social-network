@@ -1,3 +1,16 @@
 @import "./variables.scss";
 @import "./components/navbar/nav-bar.scss";
 @import "./components/home/home.scss";
+@import "./components/home-carousel/home-carousel.scss";
+
+@media (min-width: $breakpoint-phone) {
+  .main-content {
+    padding: 0rem $medium-padding;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .main-content {
+    padding: 0rem $large-padding;
+  }
+}
