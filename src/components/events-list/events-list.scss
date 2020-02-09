@@ -1,0 +1,15 @@
+.events-list {
+  &__title {
+    color: $primary-color;
+    font-size: $font-size-title;
+    padding: 1rem;
+  }
+  &__list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  &__item {
+    margin: $medium-space 0px;
+  }
+}
