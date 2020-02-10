@@ -3,12 +3,15 @@ $secondary-color: #003a59;
 $third-color: #36453b;
 $black: #040f0f;
 $white: #eee2df;
+$gray: #999999;
+$primary-color-ligth: #ffe8e8;
+
 $success-color: #248232;
 $alert-color: #800e13;
 
-$small-space: 1rem;
-$medium-space: 2rem;
-$large-space: 3rem;
+$small-space: 0.5rem;
+$medium-space: 1rem;
+$large-space: 2rem;
 
 $breakpoint-phone: 599px;
 $breakpoint-tablet: 900px;
@@ -18,3 +21,6 @@ $breakpoint-desktop: 1800px;
 $large-padding: 20%;
 $medium-padding: 10%;
 $small-padding: 5%;
+
+$font-size-title-small: 2rem;
+$font-size-title-big: 3rem;

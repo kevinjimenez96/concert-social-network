@@ -2,15 +2,55 @@
 @import "./components/navbar/nav-bar.scss";
 @import "./components/home/home.scss";
 @import "./components/home-carousel/home-carousel.scss";
+@import "./components/event-item/event-item.scss";
+@import "./components/events-list/events-list.scss";
+@import "./components/add-event/add-event.scss";
 
-@media (min-width: $breakpoint-phone) {
-  .main-content {
-    padding: 0rem $medium-padding;
+.primary-btn {
+  border-radius: 0.2rem;
+  height: 2rem;
+  width: 6rem;
+  &--log-in {
+    border: none;
+    color: white;
+    background-color: $primary-color;
   }
+  &--log-out {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    background-color: white;
+  }
+}
+.large-spin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.ant-spin-dot-item {
+  background-color: $primary-color;
+}
+
+.title {
+  color: $primary-color;
+  font-size: $font-size-title-small;
+  padding: 1rem;
+}
+
+.label {
+  color: $secondary-color;
+  font-weight: bold;
+  font-size: medium;
 }
 
 @media (min-width: $breakpoint-tablet) {
   .main-content {
     padding: 0rem $large-padding;
+  }
+  .title {
+    color: $primary-color;
+    font-size: $font-size-title-big;
+    padding: 1rem;
   }
 }

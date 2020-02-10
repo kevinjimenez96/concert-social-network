@@ -16,6 +16,7 @@ export default function initializer() {
     new Date(2020, 3, 20),
     "Andre",
     "/assets/Tex-Mex_Summer_Party.gif",
+    "A mexican themed party",
     null,
     [],
     null
@@ -27,6 +28,7 @@ export default function initializer() {
     "Andre",
     "/assets/Gastronomy_World_Tour.gif",
     null,
+    null,
     [],
     null
   );
@@ -36,16 +38,18 @@ export default function initializer() {
     new Date(2020, 7, 9),
     "Andre",
     "/assets/Bartender_vs_Barista.gif",
+    "Coffe... and alcohol?",
     null,
     [],
     null
   );
 
   let thanksGivingEvent = new Event(
-    "Social_Thanksgiving-2019",
+    "Social Thanksgiving 2020",
     new Date(2020, 10, 20),
     "Andre",
     "/assets/Social_Thanksgiving-2019.png",
+    "Thanksgiving celebration party",
     null,
     [],
     null

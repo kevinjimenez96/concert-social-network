@@ -3,6 +3,7 @@ export default function Event(
   date,
   owner,
   image,
+  description,
   playlist,
   assistants,
   config
@@ -11,6 +12,7 @@ export default function Event(
   this.date = date;
   this.owner = owner;
   this.image = image;
+  this.description = description;
   this.playlist = playlist;
   this.assistants = assistants;
   this.config = config;
