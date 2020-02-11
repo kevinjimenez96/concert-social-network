@@ -24,10 +24,10 @@ export const Playlist = ({ playlist_id }) => {
   }, [playlist_id]);
 
   return (
-    <section>
-      <ul>
+    <section className='playlist'>
+      <ul className='playlist__list'>
         {playlist.map(song => (
-          <li key={song.track.id}>
+          <li key={song.track.id} className='playlist__item'>
             <SongItem song={song.track}></SongItem>
           </li>
         ))}
