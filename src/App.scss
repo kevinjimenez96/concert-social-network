@@ -43,13 +43,13 @@
 .title {
   color: $primary-color;
   font-size: $font-size-title-small;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .label {
   color: $secondary-color;
   font-weight: bold;
-  font-size: medium;
+  font-size: small;
 }
 
 @media (min-width: $breakpoint-tablet) {

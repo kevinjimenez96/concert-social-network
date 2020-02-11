@@ -1,16 +1,17 @@
 .event-detail {
   width: 100%;
   padding: 0.5rem;
+
   &__section {
     display: flex;
+    flex-direction: column;
     color: black;
   }
   &__info {
     width: 100%;
   }
   &__img {
-    width: 50vw;
-    height: 20vh;
+    width: 100%;
     margin-right: 1rem;
   }
   &__header {
@@ -26,7 +27,19 @@
   &__date {
     color: $gray;
   }
-  &__owner {
-    margin-top: 3rem;
+}
+
+@media (min-width: $breakpoint-phone) {
+  .event-detail {
+    &__section {
+      flex-direction: row;
+    }
+    &__img {
+      width: 50%;
+      margin-right: 1rem;
+    }
+    &__owner {
+      margin-top: 3rem;
+    }
   }
 }
