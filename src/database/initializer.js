@@ -3,14 +3,6 @@ import Event from "../models/event";
 import { UsersService, EventsService } from "../database/database";
 
 export default function initializer() {
-  let andreUser = new User("Andre", "patito", "12131342805");
-  let hayleenUser = new User("Hayleen", "patito", "22mvxki27kwxpkuwx2gktelli");
-  let gustavoUser = new User("Hayleen", "patito", "3vd621xmjn23caokv7saxw3bj");
-
-  UsersService.insert(andreUser);
-  UsersService.insert(hayleenUser);
-  UsersService.insert(gustavoUser);
-
   let tex_mexEvent = new Event(
     "Tex-Mex Summer Party",
     new Date(2020, 3, 20),

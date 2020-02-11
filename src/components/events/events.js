@@ -4,5 +4,6 @@ import { EventsService } from "../../database/database";
 
 export const Events = () => {
   let events = EventsService.find();
+
   return <EventsList events={events} title='Events'></EventsList>;
 };

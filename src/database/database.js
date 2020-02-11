@@ -1,6 +1,4 @@
-const database = window.localStorage;
-database.setItem("events", "[]");
-database.setItem("users", "[]");
+export const database = window.localStorage;
 
 export class EventsService {
   static find() {
@@ -53,9 +51,9 @@ export class UsersService {
     return JSON.parse(database.getItem("users"));
   }
 
-  static findByName(username) {
+  static findByEmail(email) {
     let users = JSON.parse(database.getItem("users"));
-    return users.find(user => user.username === username);
+    return users.find(user => user.email === email);
   }
 
   static insert(user) {
@@ -66,18 +64,22 @@ export class UsersService {
 
   static update(user) {
     let users = JSON.parse(database.getItem("users"));
-    let index = users.findIndex(
-      userInList => userInList.username === user.username
-    );
+    let index = users.findIndex(userInList => userInList.email === user.email);
     users[index] = user;
     database.setItem("users", JSON.stringify(users));
   }
 
   static delete(user) {
     let users = JSON.parse(database.getItem("users"));
-    let index = users.findIndex(
-      userInList => userInList.username === user.username
-    );
+    let index = users.findIndex(userInList => userInList.email === user.email);
     users.splice(index, 1);
+  }
+
+  static exists(email) {
+    let users = JSON.parse(database.getItem("users"));
+    if (users.findIndex(userInList => userInList.email === email) === -1) {
+      return false;
+    }
+    return true;
   }
 }

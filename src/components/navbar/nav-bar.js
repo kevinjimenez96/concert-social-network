@@ -7,17 +7,29 @@ const NavBar = ({ location }) => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   return (
-    <nav className='navbar'>
-      <img className='navbar__logo' src={Logo} alt='Logo of Gig' />
+    <nav className={"navbar" + (!isAuthenticated ? " fullwidth" : "")}>
+      <div
+        className={"navbar__header" + (!isAuthenticated ? " fullwidth" : "")}
+      >
+        <img className='navbar__logo' src={Logo} alt='Logo of Gig' />
 
-      {!isAuthenticated && (
-        <button
-          className='primary-btn primary-btn--log-in'
-          onClick={() => loginWithRedirect({})}
-        >
-          Log in
-        </button>
-      )}
+        {isAuthenticated && (
+          <button
+            className='primary-btn primary-btn--log-out navbar__button--phone'
+            onClick={() => logout()}
+          >
+            Log out
+          </button>
+        )}
+        {!isAuthenticated && (
+          <button
+            className='primary-btn primary-btn--log-in'
+            onClick={() => loginWithRedirect({})}
+          >
+            Log in
+          </button>
+        )}
+      </div>
 
       {isAuthenticated && (
         <ul className='navbar__links'>
@@ -60,7 +72,10 @@ const NavBar = ({ location }) => {
               My events
             </Link>
           </li>
-          <li>
+          <li
+            className='navbar__button navbar__button--desktop'
+            id='navBar__button'
+          >
             <button
               className='primary-btn primary-btn--log-out'
               onClick={() => logout()}

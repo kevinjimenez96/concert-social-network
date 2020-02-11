@@ -22,7 +22,7 @@ export const EventItem = ({ event }) => {
         className='event-item__img'
         src={event.image}
         alt={`${event.name} event`}
-      ></img>
+      />
       <div className='event-item__info'>
         <div className='event-item__header'>
           <h3 className='event-item__name'>{event.name}</h3>

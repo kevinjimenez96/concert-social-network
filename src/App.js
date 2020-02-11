@@ -11,7 +11,6 @@ import NavBar from "./components/navbar/nav-bar";
 import { Home } from "./components/home/home";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import "./App.scss";
-import initializer from "./database/initializer";
 import { AppProvider } from "./app-provider";
 import { Login } from "./components/login/login";
 import { MyEvents } from "./components/my-events/my-events";
@@ -19,7 +18,6 @@ import { Events } from "./components/events/events";
 import { EventDetail } from "./components/event-detail/event-detail";
 import { AddEvent } from "./components/add-event/add-event";
 
-initializer();
 function App() {
   const { loading } = useAuth0();
 

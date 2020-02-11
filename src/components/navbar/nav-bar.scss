@@ -3,7 +3,13 @@
   flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 8px #f0f1f2;
-
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1rem;
+  }
   &__logo {
     width: 7rem;
     align-self: center;
@@ -40,6 +46,31 @@
       border-top: 3px solid $primary-color;
     }
   }
+  &__button {
+    display: flex;
+    align-items: center;
+  }
+}
+
+#navBar__button {
+  display: none;
+}
+
+@media (min-width: $breakpoint-phone) {
+  #navBar__button {
+    display: inline-flex;
+  }
+  .navbar {
+    height: 3rem;
+    flex-direction: row;
+    &__button--phone {
+      display: none;
+    }
+
+    &__header {
+      width: 28%;
+    }
+  }
 }
 
 @media (min-width: $breakpoint-tablet) {
@@ -50,8 +81,14 @@
     align-items: center;
     padding: 0rem $large-padding;
     &__links {
-      display: inline;
       height: 100%;
     }
+    &__header {
+      width: 20%;
+    }
   }
+}
+
+.fullwidth {
+  width: 100%;
 }

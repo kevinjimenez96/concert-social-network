@@ -3,6 +3,7 @@
 @import "./components/home/home.scss";
 @import "./components/home-carousel/home-carousel.scss";
 @import "./components/event-item/event-item.scss";
+@import "./components/event-detail/event-detail.scss";
 @import "./components/events-list/events-list.scss";
 @import "./components/add-event/add-event.scss";
 
@@ -21,6 +22,11 @@
     background-color: white;
   }
 }
+
+.hidden {
+  display: none;
+}
+
 .large-spin-container {
   display: flex;
   justify-content: center;
