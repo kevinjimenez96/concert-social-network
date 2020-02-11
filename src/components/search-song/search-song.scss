@@ -1,0 +1,21 @@
+.autosuggest__container {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.autosuggest__suggestions-container {
+  border: 1px solid $primary-color;
+  border-radius: 0.2rem;
+}
+.autosuggest__input {
+  border: 1px solid rgb(204, 204, 204);
+  margin-left: 2rem;
+  padding: 0.2rem;
+  &-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+  border-radius: 0.3rem;
+}

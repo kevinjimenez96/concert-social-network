@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { EventsService } from "../../database/database";
 import { SearchSong } from "../search-song/search-song";
 import { Playlist } from "../playlist/playlist";
 
 export const EventDetail = () => {
+  const [newSong, setnewSong] = useState(false);
   const { name } = useParams();
   let event = EventsService.findByName(name);
   event.date = new Date(event.date);
@@ -45,8 +46,15 @@ export const EventDetail = () => {
       </section>
 
       <section className='playlist'>
-        <SearchSong playlist_id={event.playlist}></SearchSong>
-        <Playlist playlist_id={event.playlist}></Playlist>
+        <SearchSong
+          playlist_id={event.playlist}
+          setnewSong={setnewSong}
+        ></SearchSong>
+        <Playlist
+          playlist_id={event.playlist}
+          setnewSong={setnewSong}
+          newSong={newSong}
+        ></Playlist>
       </section>
     </section>
   );

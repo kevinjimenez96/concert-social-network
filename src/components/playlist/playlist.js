@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { SongItem } from "../song-item/song-item";
 import { UsersService } from "../../database/database";
 
-export const Playlist = ({ playlist_id }) => {
+export const Playlist = ({ playlist_id, newSong, setnewSong }) => {
   const [playlist, setplaylist] = useState([]);
 
   useEffect(() => {
@@ -18,10 +18,11 @@ export const Playlist = ({ playlist_id }) => {
         .then(res => res.json())
         .then(res => {
           setplaylist(res.tracks.items);
+          setnewSong(false);
         });
     };
     getPlaylist();
-  }, [playlist_id]);
+  }, [playlist_id, newSong, setnewSong]);
 
   return (
     <section className='playlist'>

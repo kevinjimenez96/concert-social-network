@@ -4,23 +4,23 @@ import { UsersService } from "../../database/database";
 import { SongItem } from "../song-item/song-item";
 
 let theme = {
-  container: "react-autosuggest__container",
-  containerOpen: "react-autosuggest__container--open",
-  input: "react-autosuggest__input",
-  inputOpen: "react-autosuggest__input--open",
-  inputFocused: "react-autosuggest__input--focused",
-  suggestionsContainer: "react-autosuggest__suggestions-container",
-  suggestionsContainerOpen: "react-autosuggest__suggestions-container--open",
+  container: "autosuggest__container",
+  containerOpen: "autosuggest__container--open",
+  input: "autosuggest__input",
+  inputOpen: "autosuggest__input--open",
+  inputFocused: "autosuggest__input--focused",
+  suggestionsContainer: "autosuggest__suggestions-container",
+  suggestionsContainerOpen: "autosuggest__suggestions-container--open",
   suggestionsList: "autosuggest__suggestions-list",
-  suggestion: "react-autosuggest__suggestion",
-  suggestionFirst: "react-autosuggest__suggestion--first",
-  suggestionHighlighted: "react-autosuggest__suggestion--highlighted",
-  sectionContainer: "react-autosuggest__section-container",
-  sectionContainerFirst: "react-autosuggest__section-container--first",
-  sectionTitle: "react-autosuggest__section-title"
+  suggestion: "suggestion",
+  suggestionFirst: "autosuggest__suggestion--first",
+  suggestionHighlighted: "autosuggest__suggestion--highlighted",
+  sectionContainer: "autosuggest__section-container",
+  sectionContainerFirst: "autosuggest__section-container--first",
+  sectionTitle: "autosuggest__section-title"
 };
 
-export const SearchSong = ({ playlist_id }) => {
+export const SearchSong = ({ playlist_id, setnewSong }) => {
   const [value, setvalue] = useState("");
   const [suggestions, setsuggestions] = useState([]);
   const onChange = (event, { newValue }) => {
@@ -82,13 +82,22 @@ export const SearchSong = ({ playlist_id }) => {
     )
       .then(res => res.json())
       .then(res => {
-        console.log(res);
+        setnewSong(true);
+        setvalue("");
       });
   }
+
+  const renderInputComponent = inputProps => (
+    <div className='autosuggest__input-container'>
+      <h3 className='autosuggest__input__label label'>Add a new song:</h3>
+      <input {...inputProps} />
+    </div>
+  );
 
   return (
     <div>
       <Autosuggest
+        renderInputComponent={renderInputComponent}
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
