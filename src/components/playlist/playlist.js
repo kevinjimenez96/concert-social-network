@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { SongItem } from "../song-item/song-item";
 import { UsersService } from "../../database/database";
+import { useAuth0 } from "../../react-auth0-spa";
 
 export const Playlist = ({ playlist_id, newSong, setnewSong }) => {
   const [playlist, setplaylist] = useState([]);
+  const { user } = useAuth0();
 
   useEffect(() => {
     const getPlaylist = () => {
       var miInit = {
         method: "GET",
         headers: {
-          Authorization:
-            "Bearer " + UsersService.findByEmail("kevinja9608@gmail.com").token
+          Authorization: "Bearer " + UsersService.findByEmail(user.email).token
         }
       };
       fetch(`https://api.spotify.com/v1/playlists/${playlist_id}`, miInit)
