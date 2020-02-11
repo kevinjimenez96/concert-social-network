@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { EventsService } from "../../database/database";
 import { SearchSong } from "../search-song/search-song";
+import { Playlist } from "../playlist/playlist";
 
 export const EventDetail = () => {
   const { name } = useParams();
@@ -44,7 +45,8 @@ export const EventDetail = () => {
       </section>
 
       <section className='playlist'>
-        <SearchSong></SearchSong>
+        <SearchSong playlist_id={event.playlist}></SearchSong>
+        <Playlist playlist_id={event.playlist}></Playlist>
       </section>
     </section>
   );

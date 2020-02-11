@@ -18,6 +18,7 @@ import { Events } from "./components/events/events";
 import { EventDetail } from "./components/event-detail/event-detail";
 import { AddEvent } from "./components/add-event/add-event";
 
+//initializer();
 function App() {
   const { loading } = useAuth0();
 
@@ -45,21 +46,26 @@ function App() {
               <Route path='/index'>
                 <Redirect to='/'></Redirect>
               </Route>
-              <PrivateRoute path='/home'>
+              <Route path='/home'>
                 <Redirect to='/'></Redirect>
-              </PrivateRoute>
-              <PrivateRoute exact path='/events'>
-                <Events></Events>
-              </PrivateRoute>
-              <PrivateRoute path='/events/:name'>
-                <EventDetail></EventDetail>
-              </PrivateRoute>
-              <PrivateRoute path='/my-events'>
-                <MyEvents></MyEvents>
-              </PrivateRoute>
-              <PrivateRoute path='/add-event'>
-                <AddEvent></AddEvent>
-              </PrivateRoute>
+              </Route>
+              <PrivateRoute
+                exact
+                path='/events'
+                component={Events}
+              ></PrivateRoute>
+              <PrivateRoute
+                path='/events/:name'
+                component={EventDetail}
+              ></PrivateRoute>
+              <PrivateRoute
+                path='/my-events'
+                component={MyEvents}
+              ></PrivateRoute>
+              <PrivateRoute
+                path='/add-event'
+                component={AddEvent}
+              ></PrivateRoute>
             </Switch>
           </main>
         </Router>

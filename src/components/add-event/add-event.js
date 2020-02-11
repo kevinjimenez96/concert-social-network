@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Input, DatePicker } from "antd";
 import { useAuth0 } from "../../react-auth0-spa";
 import EventCustom from "../../models/event";
 import { UsersService, EventsService } from "../../database/database";
-import { useSpotifyToken } from "../../hooks";
 import { Redirect } from "react-router-dom";
 
 const { TextArea } = Input;
 
 export const AddEvent = () => {
-  const { spotifyToken } = useSpotifyToken();
   const [posted, setPosted] = useState(false);
 
   const [name, setName] = useState("");
@@ -18,10 +16,6 @@ export const AddEvent = () => {
   const [image, setImage] = useState("");
 
   const { user } = useAuth0();
-
-  useEffect(() => {
-    console.log(spotifyToken);
-  }, [spotifyToken]);
 
   const handleSubmit = e => {
     e.preventDefault();

@@ -1,0 +1,23 @@
+.song-item {
+  display: flex;
+  width: 100%;
+  height: 8rem;
+  padding: 0.5rem;
+  color: black;
+  align-items: center;
+  border: 1px solid $primary-color;
+  margin: 1rem;
+  &__img {
+    width: 6rem;
+    height: 6rem;
+    margin-right: 1rem;
+  }
+
+  &__name {
+    color: $primary-color;
+  }
+}
+
+.autosuggest__suggestions-list {
+  list-style: none;
+}

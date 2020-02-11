@@ -1,6 +1,5 @@
-import User from "../models/user";
 import Event from "../models/event";
-import { UsersService, EventsService } from "../database/database";
+import { EventsService } from "../database/database";
 
 export default function initializer() {
   let tex_mexEvent = new Event(
