@@ -1,6 +1,8 @@
 import Autosuggest from "react-autosuggest";
 import React, { useState } from "react";
 import { UsersService } from "../../database/database";
+import { useAuth0 } from "../../react-auth0-spa";
+
 import { SongItem } from "../song-item/song-item";
 
 let theme = {
@@ -23,6 +25,8 @@ let theme = {
 export const SearchSong = ({ playlist_id, setnewSong }) => {
   const [value, setvalue] = useState("");
   const [suggestions, setsuggestions] = useState([]);
+  const { user } = useAuth0();
+
   const onChange = (event, { newValue }) => {
     setvalue(newValue);
   };
@@ -44,8 +48,7 @@ export const SearchSong = ({ playlist_id, setnewSong }) => {
     var miInit = {
       method: "GET",
       headers: {
-        Authorization:
-          "Bearer " + UsersService.findByEmail("kevinja9608@gmail.com").token
+        Authorization: "Bearer " + UsersService.findByEmail(user.email).token
       }
     };
     fetch(
@@ -72,8 +75,7 @@ export const SearchSong = ({ playlist_id, setnewSong }) => {
     var miInit = {
       method: "POST",
       headers: {
-        Authorization:
-          "Bearer " + UsersService.findByEmail("kevinja9608@gmail.com").token
+        Authorization: "Bearer " + UsersService.findByEmail(user.email).token
       }
     };
     fetch(
